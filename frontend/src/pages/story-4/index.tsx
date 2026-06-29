@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProjectManager } from './components/ProjectManager/ProjectManager';
+import { ProjectManager } from './projects/ProjectManager';
 
 /**
  * Page for story-4 — synthesised by the AEGIS pipeline so the generated

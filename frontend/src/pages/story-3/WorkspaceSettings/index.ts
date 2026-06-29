@@ -1,2 +1,2 @@
-export * from './MemberList/MemberList';
-export * from './MemberList/MemberList.types';
+export * from './WorkspaceSettings';
+export * from './WorkspaceSettings.types';

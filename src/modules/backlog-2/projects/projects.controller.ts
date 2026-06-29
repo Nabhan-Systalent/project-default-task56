@@ -1,5 +1,5 @@
 import { Controller, Get, Delete, Param, HttpCode, HttpStatus } from '@nestjs/common';
-import { ApiTags, ApiResponse } from '@nestjs/swagger';
+import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { ProjectsService } from './projects.service';
 import { ProjectResponseDto } from '../tasks/dto';
 
@@ -9,6 +9,7 @@ export class ProjectsController {
   constructor(private readonly projectsService: ProjectsService) {}
 
   @Get()
+  @ApiOperation({ summary: 'List projects' })
   @ApiResponse({ status: 200, type: [ProjectResponseDto] })
   findAll() {
     return this.projectsService.findAll();
@@ -16,6 +17,8 @@ export class ProjectsController {
 
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
+  @ApiOperation({ summary: 'Delete project' })
+  @ApiResponse({ status: 204 })
   delete(@Param('id') id: string) {
     return this.projectsService.delete(id);
   }

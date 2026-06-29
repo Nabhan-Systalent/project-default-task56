@@ -3,7 +3,7 @@ import { ProjectResponseDto } from './dto';
 
 @Injectable()
 export class ProjectsService {
-  private projects = [{ id: 'p1', name: 'Alpha Project' }];
+  private projects: ProjectResponseDto[] = [{ id: '1', name: 'Default Project' }];
 
   findAll(): ProjectResponseDto[] {
     return this.projects;

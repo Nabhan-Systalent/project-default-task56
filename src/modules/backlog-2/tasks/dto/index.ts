@@ -1,5 +1,5 @@
-import { IsString, IsNotEmpty, IsOptional } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
+import { IsString, IsNotEmpty, IsOptional } from 'class-validator';
 
 export class CreateTaskDto {
   @ApiProperty()
@@ -16,7 +16,6 @@ export class CreateTaskDto {
 export class TaskResponseDto {
   @ApiProperty()
   id: string;
-
   @ApiProperty()
   title: string;
 }
@@ -24,7 +23,6 @@ export class TaskResponseDto {
 export class ProjectResponseDto {
   @ApiProperty()
   id: string;
-
   @ApiProperty()
   name: string;
 }

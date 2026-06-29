@@ -1,16 +1,19 @@
 import { Injectable } from '@nestjs/common';
-import { TaskResponseDto, CreateTaskDto } from './dto';
+import { CreateTaskDto, TaskResponseDto } from './dto';
 
 @Injectable()
 export class TasksService {
-  private tasks = [{ id: '1', title: 'Task 1' }];
+  private tasks: TaskResponseDto[] = [];
 
   findAll(): TaskResponseDto[] {
     return this.tasks;
   }
 
-  create(dto: CreateTaskDto): TaskResponseDto {
-    const newTask = { id: Math.random().toString(36).substr(2, 9), ...dto };
+  create(createTaskDto: CreateTaskDto): TaskResponseDto {
+    const newTask = {
+      id: Math.random().toString(36).substr(2, 9),
+      ...createTaskDto,
+    };
     this.tasks.push(newTask);
     return newTask;
   }

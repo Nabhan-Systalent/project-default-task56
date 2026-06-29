@@ -1,14 +1,14 @@
 import { Injectable } from '@nestjs/common';
-import { Project } from './dto';
+import { ProjectDto } from './dto/project.dto';
 
 @Injectable()
 export class ProjectsService {
-  private projects: Project[] = [
-    { id: '1', name: 'Alpha Project' },
-    { id: '2', name: 'Beta Project' },
+  private projects: ProjectDto[] = [
+    { id: '1', name: 'Alpha Project', createdAt: new Date() },
+    { id: '2', name: 'Beta Project', createdAt: new Date() },
   ];
 
-  async findAll(): Promise<Project[]> {
+  async findAll(): Promise<ProjectDto[]> {
     return this.projects;
   }
 

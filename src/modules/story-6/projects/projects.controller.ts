@@ -1,7 +1,7 @@
 import { Controller, Get, Delete, Param, HttpCode, HttpStatus } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { ProjectsService } from './projects.service';
-import { Project } from './dto';
+import { ProjectDto } from './dto/project.dto';
 
 @ApiTags('Projects')
 @Controller('projects')
@@ -10,8 +10,8 @@ export class ProjectsController {
 
   @Get()
   @ApiOperation({ summary: 'List projects' })
-  @ApiResponse({ status: 200, type: [Project] })
-  async listProjects(): Promise<Project[]> {
+  @ApiResponse({ status: 200, description: 'Success', type: [ProjectDto] })
+  async listProjects(): Promise<ProjectDto[]> {
     return this.projectsService.findAll();
   }
 

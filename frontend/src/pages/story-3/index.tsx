@@ -1,5 +1,5 @@
 import React from 'react';
-import { MemberList } from './WorkspaceSettings/MemberList/MemberList';
+import { WorkspaceSettings } from './WorkspaceSettings/WorkspaceSettings';
 
 /**
  * Page for story-3 — synthesised by the AEGIS pipeline so the generated
@@ -8,16 +8,12 @@ import { MemberList } from './WorkspaceSettings/MemberList/MemberList';
  */
 export default function Page(): React.ReactElement {
   const props: any = {
-    members: [],
-    onRemoveMember: () => {},
-    onChangeRole: () => {},
-    isLoading: false,
-    error: undefined,
+    initialMembers: [],
   };
   return (
     <div>
       <h1>Story 3</h1>
-      <MemberList {...props} />
+      <WorkspaceSettings {...props} />
     </div>
   );
 }

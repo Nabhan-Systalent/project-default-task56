@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProjectBoard } from './ProjectBoard/ProjectBoard';
+import { ProjectBoard } from './components/ProjectBoard/ProjectBoard';
 
 /**
  * Page for story-5 — synthesised by the AEGIS pipeline so the generated
@@ -8,9 +8,8 @@ import { ProjectBoard } from './ProjectBoard/ProjectBoard';
  */
 export default function Page(): React.ReactElement {
   const props: any = {
-    status: [],
     tasks: [],
-    onTaskUpdate: () => {},
+    onTaskClick: () => {},
   };
   return (
     <div>
